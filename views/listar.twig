@@ -1,0 +1,38 @@
+{% extends "layout.twig" %}
+
+{% block body %}
+
+<h1 class="text-center text-xl">Lista de reuniões</h1>
+
+<div class="container mx-auto m-8">
+    <table class="w-full text-center">
+        <thead>
+            <tr class="m-1">
+                <th>id</th>
+                <th>Titulo</th>
+                <th>Assunto</th>
+                <th>Descrição</th>
+                <th>Data</th>
+                <th>Local</th>
+                <th>Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for reuniao in reunioes %}
+            <tr class="m-1 text-lg">
+                <td>{{reuniao.id}}</td>
+                <td>{{reuniao.data.titulo}}</td>
+                <td>{{reuniao.data.assunto}}</td>
+                <td>{{reuniao.data.descricao}}</td>
+                <td>{{reuniao.data.data}}</td>
+                <td>{{reuniao.data.local}}</td>re
+                <td>
+                    <a href="/reuniao/atualizar/{{reuniao.id}}"><button class="p-2 text-white bg-blue-500 text-right rounded-md text-lg my-4">Atualizar</button></a>
+                    <a href="/reuniao/excluir/{{reuniao.id}}"><button class="p-2 text-white bg-red-500 text-right rounded-md text-lg my-4" >Excluir</button></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

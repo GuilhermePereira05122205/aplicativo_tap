@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/output.css">
+  </head>
+  <body>
+    <header>
+        <nav class="w-full p-4 bg-blue-400">
+          <ul class="list-none">
+            <li class="inline-block m-2 text-white"><a href="/reuniao/cadastrar">Cadastrar</a></li>
+            <li class="inline-block m-2 text-white"><a href="/reuniao/listar">Listar</a></li>
+          </ul>
+        </nav>
+    </header>
+    <main>
+    {% block body %}{% endblock %}
+  </main>
+  </body>
+</html>
